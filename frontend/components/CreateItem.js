@@ -81,7 +81,7 @@ class CreateItem extends Component {
           <Error error={ error } />
           <fieldset disabled={ loading } aria-busy={ loading }>
             <label htmlFor="file">
-              Title
+              Image
               <input
                 type="file"
                 id="file"
@@ -119,7 +119,7 @@ class CreateItem extends Component {
               />
             </label>
             <label htmlFor="description">
-              Title
+              Description
               <textarea
                 id="description"
                 name="description"
