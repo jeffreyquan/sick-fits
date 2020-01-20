@@ -6,7 +6,7 @@ import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 import { format } from 'date-fns';
-
+import DeleteItem from './DeleteItem';
 
 export default class Item extends Component {
   static propTypes = {
@@ -36,7 +36,7 @@ export default class Item extends Component {
             <a>Edit</a>
           </Link>
           <button>Add To Cart</button>
-          <button>Delete</button>
+          <DeleteItem id={ item.id }>Delete This Item</DeleteItem>
         </div>
       </ItemStyles>
     );
