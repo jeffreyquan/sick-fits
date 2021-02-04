@@ -63,7 +63,14 @@
   "eslintConfig": {
     "extends": [
       "wesbos"
-    ]
+    ],
+    "rules": {
+      "prettier/prettier": [
+        {
+          "singleQuote": false
+        }
+      ]
+    }
   },
   "jest": {
     "setupFilesAfterEnv": [
