@@ -16,7 +16,10 @@ export const User = list({
     cart: relationship({ ref: 'CartItem.user', many: true, ui: {
       createView: { fieldMode: 'hidden' } ,
       itemView: { fieldMode: 'read' }
-    } })
-    // TODO: add roles, cart and orders
+    } }),
+    orders: relationship({
+      ref: 'Order.user',
+      many: true
+    })
   }
 })
