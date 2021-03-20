@@ -1,3 +1,4 @@
+import { Role } from './schemas/Role';
 import "dotenv/config";
 import { OrderItem } from './schemas/OrderItem';
 import { Order } from './schemas/Order';
@@ -12,6 +13,7 @@ import { User } from "./schemas/User"
 import { Product } from "./schemas/Product"
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
+import { permissionsList } from './schemas/fields';
 
 const databaseURL =
   process.env.DATABASE_URL || "mongodb://localhost/keystone-sick-fits-tutorial";
@@ -61,16 +63,16 @@ export default withAuth(config({
     CartItem,
     OrderItem,
     Order,
+    Role
   }),
   extendGraphqlSchema,
   ui: {
     // Show the UI only for people who pass this test
     isAccessAllowed: ({ session }) => {
-      console.log(session);
       return !!session?.data;
     }
   },
   session: withItemData(statelessSessions(sessionConfig), {
-    User: `id`
+    User: `id name email role { ${permissionsList.join(' ')} }`
   })
 }));
