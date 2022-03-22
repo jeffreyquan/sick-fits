@@ -4,12 +4,13 @@ export default function formatMoney(amount = 0) {
     currency: "USD",
     minimumFractionDigits: 2,
   };
-  const formatter = Intl.NumberFormat("en-US", options);
 
   // check if it's a clean dollar amount
-  if (amount % amount === 0) {
+  if (amount % 100 === 0) {
     options.minimumFractionDigits = 0;
   }
+
+  const formatter = Intl.NumberFormat("en-US", options);
 
   return formatter.format(amount / 100);
 }
