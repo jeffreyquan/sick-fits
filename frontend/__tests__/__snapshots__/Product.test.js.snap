@@ -3,14 +3,14 @@
 exports[`<Product/> renders and matches the snapshot 1`] = `
 <div>
   <div
-    class="ItemStyles-sc-16pk14u-0 idKkKA"
+    class="ItemStyles-sc-16pk14u-0 fAcGEr"
   >
     <img
       alt="dogs are best"
       src="dog.jpg"
     />
     <h3
-      class="Title-sc-16nq74k-0 kDFcWM"
+      class="Title-sc-16nq74k-0 fPQljb"
     >
       <a
         href="/product/abc123"
@@ -19,7 +19,7 @@ exports[`<Product/> renders and matches the snapshot 1`] = `
       </a>
     </h3>
     <span
-      class="PriceTag-nwbk6t-0 iFDMLq"
+      class="PriceTag-sc-nwbk6t-0 ffUdgI"
     >
       $50
     </span>
