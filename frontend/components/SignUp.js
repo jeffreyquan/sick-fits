@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 import { CURRENT_USER_QUERY } from "./User";
 import Error from "./ErrorMessage";
 
-const SIGNUP_MUTATION = gql`
+export const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
     $email: String!
     $name: String!
@@ -81,7 +81,7 @@ export default function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit"> Sign In!</button>
+        <button type="submit">Sign Up!</button>
       </fieldset>
     </Form>
   );
