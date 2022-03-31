@@ -7,7 +7,7 @@ import DisplayError from "../components/ErrorMessage";
 import { ALL_PRODUCTS_QUERY } from "./Products";
 import Router from "next/router";
 
-const CREATE_PRODUCT_MUTATION = gql`
+export const CREATE_PRODUCT_MUTATION = gql`
   mutation CREATE_PRODUCT_MUTATION(
     # variables that are getting passed in and what types they are
     $name: String!
@@ -35,9 +35,9 @@ const CREATE_PRODUCT_MUTATION = gql`
 export default function CreateProduct() {
   const { inputs, handleChange, clearForm, resetForm } = useForm({
     image: "",
-    name: "Nice shoes",
-    price: 123213,
-    description: "The best shoes",
+    name: "",
+    price: 0,
+    description: "",
   });
 
   const [createProduct, { data, error, loading }] = useMutation(
